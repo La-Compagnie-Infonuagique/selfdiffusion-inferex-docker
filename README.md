@@ -1,2 +1,2 @@
-# selfdiffusion-inferex-docker
-Custom API inference code for Runpod.io serverless endpoint
+# selfdiffusion-inference-docker
+Building and publishing of docker images that are used in the selfdiffusion application
