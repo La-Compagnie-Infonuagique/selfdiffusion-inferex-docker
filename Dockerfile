@@ -14,6 +14,6 @@ RUN chmod +x /$FILE_NAME
 COPY download /download
 WORKDIR /download
 
-RUN ./download_and_save.py save --model-ids "prompthero/openjourney" "SG161222/Realistic_Vision_V1.4" --destination "/models"
+RUN ./download_and_save.py save -m "prompthero/openjourney" -m "SG161222/Realistic_Vision_V1.4" --destination "/models"
 
 CMD ["/$FILE_NAME"]
