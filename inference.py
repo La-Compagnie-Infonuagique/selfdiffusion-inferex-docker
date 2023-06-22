@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import runpod
 import os
 import time
