@@ -1,10 +1,22 @@
-#!/usr/bin/env python3
+import runpod
+import os
+import time
+import torch
+from diffusers import StableDiffusionPipeline
 
-def main():
-    """ Hello World """
-    print("Hello World")
+device = "cuda" if torch.cuda.is_available() else "cpu"
+pipe = StableDiffusionPipeline.from_pretrained("/models/stable-diffusion-v1-5")
+pipe.to(device)
 
-    return
 
-if __name__ == '__main__':
-    main()
+def handler(event):
+
+    prompt = event["input"]["prompt"]
+    img = pipe(prompt).images[0]
+
+    return "ok"
+
+
+runpod.serverless.start({
+    "handler": handler
+})

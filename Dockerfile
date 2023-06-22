@@ -11,9 +11,6 @@ ADD $FILE_NAME /
 RUN chmod +x /$FILE_NAME
 
 # Download baked in models
-COPY download /download
-WORKDIR /download
-
-RUN ./download_and_save.py save -m "SG161222/Realistic_Vision_V1.4" --destination "/models"
+COPY models /models
 
 CMD ["/$FILE_NAME"]
